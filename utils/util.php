@@ -24,6 +24,9 @@ function compute_total_amount($quantity, $price, $profit = 10): float
 
 function formatMoney($amount)
 {
+
+    $amount = $amount ?? ($amount === '' ? 0 : $amount);
+
     if (!is_numeric($amount)) {
         throw new InvalidArgumentException("The input must be a numeric value.");
     }
